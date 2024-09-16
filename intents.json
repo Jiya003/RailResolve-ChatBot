@@ -1,0 +1,69 @@
+{
+  "intents": [
+    {
+      "tag": "hello",
+      "patterns": [
+        "Hello",
+        "Hi",
+        "Good morning",
+        "Good evening",
+        "Greetings"
+      ],
+      "responses": [
+        "Hello! How can I assist you today?",
+        "Hi there! What can I help you with?",
+        "Good morning! How may I assist you?",
+        "Good evening! What issue would you like to address?"
+      ],
+      "context": ""
+    },
+    {
+      "tag": "noanswer",
+      "patterns": [],
+      "responses": [
+        "Sorry, I didn't understand that. Could you please provide more details?",
+        "I’m not sure I understand. Could you clarify?",
+        "Please provide more information or rephrase your query.",
+        "I didn't catch that. Could you tell me more?"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "complaint_submission",
+      "patterns": [
+        "I want to file a complaint",
+        "How do I submit a complaint?",
+        "I need to lodge a complaint",
+        "Can I file a complaint here?"
+      ],
+      "responses": [
+        "To file a complaint, I'll need some details from you. Please provide the following information:\n1. What is the train number?\n2. On which date did the incident occur?\n3. Can you briefly describe the issue or incident?\n4. Is there any additional information you'd like to provide (e.g., location, staff involved)?"
+      ],
+      "context": ""
+    },
+    {
+      "tag": "complaint_submission_followup",
+      "patterns": [
+        "I’ve provided the complaint details",
+        "I’m done with the details",
+        "Here are the details of my complaint"
+      ],
+      "responses": [
+        "Thank you for providing the details. Here is a summary of your complaint:\n- Train Number: [train number]\n- Date of Incident: [date]\n- Description of the Issue: [description]\n- Additional Details: [additional info]\nIs this information correct?"
+      ],
+      "context": ""
+    },
+    {
+      "tag": "complaint_confirmation",
+      "patterns": [
+        "Yes, the information is correct",
+        "Submit my complaint",
+        "Please go ahead"
+      ],
+      "responses": [
+        "Your complaint has been successfully submitted. You will receive a reference number shortly. Thank you for bringing this to our attention."
+      ],
+      "context": ""
+    }
+  ]
+}
