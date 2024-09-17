@@ -1,47 +1,56 @@
-import json
 import numpy as np
-import nltk
-from nltk.stem import WordNetLemmatizer
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.naive_bayes import MultinomialNB
+import random
+import json
+import tensorflow as tf
+from sklearn.preprocessing import LabelEncoder
 
-nltk.download('wordnet')
-nltk.download('omw-1.4')
+class ChatbotModel:
+    def _init_(self, intents_file):
+        self.intents_file = intents_file
+        self.model = None
+        self.words = []
+        self.classes = []
+        self.intents = self.load_intents()
 
-lemmatizer = WordNetLemmatizer()
+    def load_intents(self):
+        with open(self.intents_file) as file:
+            return json.load(file)
 
-# Load intents
-with open('intents.json') as file:
-    data = json.load(file)
+    def preprocess_data(self):
+        patterns, labels = [], []
 
-intents = data['intents']
-classes = [intent['tag'] for intent in intents]
-patterns = []
-responses = {}
+        for intent in self.intents['intents']:
+            for pattern in intent['patterns']:
+                words = pattern.split()
+                self.words.extend(words)
+                patterns.append(pattern)
+                labels.append(intent['tag'])
+            if intent['tag'] not in self.classes:
+                self.classes.append(intent['tag'])
 
-# Process intents
-for intent in intents:
-    for pattern in intent['patterns']:
-        patterns.append(pattern)
-        responses[pattern] = intent['responses']
+        self.words = sorted(set(self.words))
+        self.classes = sorted(set(self.classes))
 
-# Create training data
-X_train = patterns
-y_train = [intent['tag'] for intent in intents for _ in intent['patterns']]
+        return patterns, labels
 
-# Vectorize text
-vectorizer = CountVectorizer()
-X_train_vectors = vectorizer.fit_transform(X_train)
+    def train_model(self):
+        patterns, labels = self.preprocess_data()
 
-# Train model
-model = MultinomialNB()
-model.fit(X_train_vectors, y_train)
+        # Convert text to numerical data
+        label_encoder = LabelEncoder()
+        labels = label_encoder.fit_transform(labels)
 
-def classify_intent(text):
-    text_vector = vectorizer.transform([text])
-    prediction = model.predict(text_vector)[0]
-    return prediction
+        # Create a simple neural network model
+        self.model = tf.keras.Sequential([
+            tf.keras.layers.Dense(128, input_shape=(len(self.words),), activation='relu'),
+            tf.keras.layers.Dense(64, activation='relu'),
+            tf.keras.layers.Dense(len(self.classes), activation='softmax')
+        ])
 
-def respond_to_intent(text):
-    intent = classify_intent(text)
-    return responses.get(text, ["I'm not sure how to respond to that."])
+        self.model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+        self.model.fit(np.array(patterns), np.array(labels), epochs=200, batch_size=8)
+
+    def classify(self, text):
+        input_data = [text.split()]
+        prediction = self.model.predict(input_data)
+        return prediction
