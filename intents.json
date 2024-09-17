@@ -28,16 +28,74 @@
       ],
       "context": [""]
     },
-    {
+ {
       "tag": "complaint_submission",
       "patterns": [
         "I want to file a complaint",
         "How do I submit a complaint?",
         "I need to lodge a complaint",
-        "Can I file a complaint here?"
+        "Complaint registration",
+        "File a grievance",
+        "Report an issue",
+        "Submit a complaint",
+        "Register a complaint",
+        "I have a complaint",
+        "Complaint form",
+        "Submit grievance"
       ],
       "responses": [
-        "To file a complaint, I'll need some details from you. Please provide the following information:\n1. What is the train number?\n2. On which date did the incident occur?\n3. Can you briefly describe the issue or incident?\n4. Is there any additional information you'd like to provide (e.g., location, staff involved)?"
+        "Please provide your name, contact information, and a brief description of your complaint.",
+        "I'll guide you through the complaint submission process.",
+        "To submit a complaint, please provide the required details."
+      ],
+      "context": ""
+    },
+
+    {
+      "tag": "complaint_status",
+      "patterns": [
+        "What's the status of my complaint?",
+        "Complaint status update",
+        "Track complaint",
+        "Check complaint status",
+        "My complaint status"
+      ],
+      "responses": [
+        "Please provide your complaint ID to check the status.",
+        "I'll look up the status of your complaint.",
+        "Your complaint is being processed."
+      ],
+      "context": ""
+    },
+     {
+      "tag": "contact_us",
+      "patterns": [
+        "Contact information",
+        "How to reach you",
+        "Your contact details",
+        "Get in touch"
+      ],
+      "responses": [
+        "You can reach us at [phone number] or [email address].",
+        "Our contact information is available on our website.",
+        "Feel free to contact us through our website or phone."
+      ],
+      "context": ""
+    },
+     {
+      "tag": "greeting_end",
+      "patterns": [
+        "Thank you",
+        "Thanks",
+        "Goodbye",
+        "Bye",
+        "Have a nice day"
+      ],
+      "responses": [
+        "You're welcome!",
+        "Have a great day!",
+        "Goodbye!",
+        "It was nice assisting you."
       ],
       "context": ""
     },
