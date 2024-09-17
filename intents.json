@@ -64,7 +64,7 @@
         "Your complaint has been successfully submitted. You will receive a reference number shortly. Thank you for bringing this to our attention."
       ],
       "context": ""
-    }
+    },
       {
       "tag": "train_status",
       "patterns": ["Check train status", "Train running status", "Where is my train"],
