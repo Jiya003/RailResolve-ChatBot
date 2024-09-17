@@ -52,33 +52,6 @@
         "Thank you for providing the details. Here is a summary of your complaint:\n- Train Number: [train number]\n- Date of Incident: [date]\n- Description of the Issue: [description]\n- Additional Details: [additional info]\nIs this information correct?"
       ],
       "context": ""
-    },
-    {
-      "tag": "complaint_confirmation",
-      "patterns": [
-        "Yes, the information is correct",
-        "Submit my complaint",
-        "Please go ahead"
-      ],
-      "responses": [
-        "Your complaint has been successfully submitted. You will receive a reference number shortly. Thank you for bringing this to our attention."
-      ],
-      "context": ""
-    },
-      {
-      "tag": "train_status",
-      "patterns": ["Check train status", "Train running status", "Where is my train"],
-      "responses": ["Please provide your train number to check the status."]
-    },
-    {
-      "tag": "complaint",
-      "patterns": ["I want to file a complaint", "How to report an issue", "Submit a complaint"],
-      "responses": ["You can submit your complaint by visiting the official Indian Railways complaint portal or providing your issue details here."]
-    },
-    {
-      "tag": "fare_inquiry",
-      "patterns": ["How much is the fare from Delhi to Mumbai", "Ticket price", "Train fare"],
-      "responses": ["Please provide the train number and travel class for accurate fare details."]
-    },
+    }
   ]
 }
