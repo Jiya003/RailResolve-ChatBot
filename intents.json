@@ -80,7 +80,5 @@
       "patterns": ["How much is the fare from Delhi to Mumbai", "Ticket price", "Train fare"],
       "responses": ["Please provide the train number and travel class for accurate fare details."]
     }
-
-
   ]
 }
