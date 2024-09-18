@@ -28,7 +28,7 @@
       ],
       "context": [""]
     },
- {
+{
       "tag": "complaint_submission",
       "patterns": [
         "I want to file a complaint",
@@ -67,7 +67,7 @@
       ],
       "context": ""
     },
-     {
+    {
       "tag": "contact_us",
       "patterns": [
         "Contact information",
@@ -82,7 +82,7 @@
       ],
       "context": ""
     },
-     {
+    {
       "tag": "greeting_end",
       "patterns": [
         "Thank you",
@@ -110,6 +110,83 @@
         "Thank you for providing the details. Here is a summary of your complaint:\n- Train Number: [train number]\n- Date of Incident: [date]\n- Description of the Issue: [description]\n- Additional Details: [additional info]\nIs this information correct?"
       ],
       "context": ""
+    },
+    {
+      "tag": "complaint_trainStatus",
+      "patterns": [
+        "A man is seating on my seat",
+        "A women is seating on my seat",
+        "Family is seating on my seat",
+        "An illegal occupant is seating on my seat",
+        "A child is seating on my seat",
+        "An old man is seating on my seat"
+      ],
+      "responses": [
+        "Okay! I will inform it to TT."
+        
+      ],
+      "context": ""
+    },
+    {
+      "tag": "complaint_lost_baggage",
+      "patterns": [
+        "I can't find my luggage",
+        "My baggage is missing",
+        "My bag didn't arrive",
+        "My suitcase hasn't been delivered",
+        "I lost my bag at the station",
+        "Where is my luggage?"
+      ],
+      "responses": [
+        "I’m sorry to hear about your missing baggage. Please report this to the station’s Lost & Found department immediately. You can also contact the customer service hotline at 10001. If you need urgent assistance, please call 1002 for immediate support."
+      ],
+      "context": ""
+    },
+    {
+      "tag": "complaint_train_delay",
+      "patterns": [
+        "The train is running late.",
+        "There’s a delay in the train schedule.",
+        "Why is the train delayed?",
+        "My train is not on time.",
+        "How long will the train delay be?",
+        "The train is overdue."
+      ],
+      "responses": [
+        "We apologize for the inconvenience caused by the train delay. Please check the latest updates at the station's information desk or contact our customer service at 10001. For urgent issues, call 10001."
+      ],
+      "context": ""
+    },
+    {
+      "tag": "complaint_uncomfortable_seat",
+      "patterns": [
+        "My seat is very uncomfortable.",
+        "The seat is not suitable for travel.",
+        "I’m not happy with my seating arrangement.",
+        "The seat is too small/too hard.",
+        "This seat is not in good condition.",
+        "I need a different seat."
+      ],
+      "responses": [
+        "We’re sorry to hear that you’re uncomfortable. Please visit the customer service desk for assistance with changing your seat. You can also reach out to our support line at 1001 for immediate help. If the situation is urgent, call 1001."
+      ],
+      "context": ""
+    },
+    {
+      "tag": "complaint_cleanliness",
+      "patterns": [
+        "The train is not clean.",
+        "The seat area is dirty.",
+        "There is garbage on the floor.",
+        "The restrooms are not maintained.",
+        "The cleanliness is poor.",
+        "The train car needs cleaning."
+      ],
+      "responses": [
+        "We apologize for the cleanliness issue you’ve encountered. Please report this to the train conductor or the station staff. For immediate assistance, contact our customer service at 1234567890, or call 1001 if the issue is severe."
+      ],
+      "context": ""
     }
+
   ]
 }
