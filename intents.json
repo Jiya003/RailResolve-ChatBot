@@ -186,6 +186,16 @@
         "We apologize for the cleanliness issue you’ve encountered. Please report this to the train conductor or the station staff. For immediate assistance, contact our customer service at 1234567890, or call 1001 if the issue is severe."
       ],
       "context": ""
+    },
+    {
+      "tag": "file_complaint",
+      "patterns": ["I want to file a complaint", "I have a complaint", "I need to report an issue"],
+      "responses": ["Please provide your name, contact information, train number, seat number, and coach."]
+    },
+    {
+      "tag": "provide_details",
+      "patterns": ["My name is *", "My contact info is *", "Train number is *", "Seat number is *", "Coach is *"],
+      "responses": ["Thank you for providing the details."]
     }
 
   ]
